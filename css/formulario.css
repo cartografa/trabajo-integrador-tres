@@ -1,0 +1,168 @@
+/*--------------------------------------------------/
+/                    FUENTES                       /
+/-------------------------------------------------*/
+
+@font-face {
+    font-family: 'Canela Bold';
+    src: url('../fuentes/CanelaDeck-Bold-Web.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Canela Black Italic';
+    src: url('../fuentes/Canela-BlackItalic-Web.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kobe Black';
+    src: url('../fuentes/MonaLisa.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*--------------------------------------------------/
+/                  ESTILO GENERAL                   /
+/-------------------------------------------------*/
+
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: 1.8;
+    font-weight: 400;
+    background: linear-gradient(-45deg, #a9ecae, #beec94,#84b976);
+    background-size: 800% 800%;
+    animation: gradient 16s ease infinite;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    gap: 7em;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*--------------------------------------------------/
+/               CLASES UTILITARIAS                 /
+/-------------------------------------------------*/
+
+.contenedor {
+    width: 80%;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.centrado {
+    text-align: center;
+}
+
+/*--------------------------------------------------/
+/                    FORMULARIO                    /
+/-------------------------------------------------*/
+
+.formulario {
+    background: rgba( 255, 255, 255, .25 );
+    box-shadow: 0 0.2em 2em 0 rgba( 31, 38, 135, .1 );
+    backdrop-filter: blur( 1.0px );
+    -webkit-backdrop-filter: blur( 1.0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, .1 );
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.form__group:not(:last-child) {
+    margin-bottom: .9em;
+}
+
+.form__title {
+    font-family: 'Canela Bold', serif;
+    margin-bottom: 1.3em;
+}
+
+.form__input {
+    font-family: 'Kobe Black', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 2em;
+    background-color: rgba(255, 255, 255, .5);
+    border: none;
+    border: 3px solid transparent;
+    width: 90%;
+}
+
+.form__input:focus {
+    outline: none;
+    box-shadow: 0 .3em 1em 0 rgba(0, 0, 0, .1);
+    border: 3px solid rgba(24, 216, 82, 0.6); 
+}
+
+.form__input:focus:invalid {
+    border: 3px solid rgba(238, 116, 156, 0.6);
+}
+
+.form__input::-webkit-input-placeholder {
+    color: #3a5233;
+    font-size: .9rem;
+}
+
+.form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-2.5rem)
+}
+
+.form__label {
+    font-family: 'Kobe Black';
+    font-size: .9rem;
+    font-weight: 700;
+    margin-left: 4rem; 
+    margin-top: .4375rem;
+    text-align: start !important;
+    display: block;
+    transition: all .3s;
+}
+
+/*--------------------------------------------------/
+/                      BOTÓN                        /
+/-------------------------------------------------*/
+
+.btn {
+    background-color: rgba(238, 116, 156, 0.9);
+    font-family: 'Kobe Black';
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: .8em 2.1em;
+    border: none;
+    border-radius: 2em;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .3em 1em rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .1em .5em rgba(0, 0, 0, .2);
+}
