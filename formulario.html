@@ -12,28 +12,29 @@
     <main>
         <div class="contenedor">
             <div class="formulario">
-                <form action="#">
+                <form action="#" name="form1">
                     <div class="titulo centrado">
                         <h2 class="form__title">
-                           Ingresá un número entre 3 y 10 ⤵️
+                           Ingresá un número entre 3 y 10:
                         </h2>
                     </div>
 
-                    <div class="form__group centrado">
-                        <input type="number" class="form__input" placeholder="Tu número" id="numero" min="3" max="10" required></imput>
+                    <div class="form__group centrado" id="grupo1">
+                        <input type="number" class="form__input" id="numero" placeholder="Tu número" min="3" max="10" required></input>
                         <label for="numero" class="form__label">Tu número</label>
                     </div>
 
-                    <!-- <div class="form__group centrado">
-                        <input type="password" class="form__input" placeholder="Contraseña" id="contrasenia" required></imput>
-                        <label for="contrasenia" class="form__label">Contraseña</label>
-                    </div> -->
+                    <div class="form__group centrado" id="grupo2">
+                    </div>
 
                     <div class="form__group centrado">
-                        <button class="btn">Enviar &rarr;</button>
+                        <input type="submit" class="btn" value="Enviar &rarr;">
                     </div>
                 </form>
             </div>
+
+            <h4></h4>
+            <p></p>
         </div>
     </main>
 

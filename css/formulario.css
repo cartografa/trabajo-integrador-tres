@@ -88,7 +88,7 @@ main {
     padding: 1em;
 }
 
-.form__group:not(:last-child) {
+.form__group{
     margin-bottom: .9em;
 }
 
