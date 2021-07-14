@@ -1,4 +1,8 @@
-const form1 = document.form1;
+/* ------------------------------------------------------------ /
+/                       PRIMER FORMULARIO                      /
+/------------------------------------------------------------*/
+
+const form1 = document.querySelector('form[name="form1"]');
 const numInput = document.querySelector('#numero');
 const grupo2 = document.querySelector('#grupo2');
 
@@ -30,17 +34,17 @@ form1.addEventListener('submit', (e) => {
         grupo2.appendChild(nombresInput);
         grupo2.appendChild(nombresLabel);
 
-        // Deshabilito 
+        // Deshabilito la primera funcionalidad del boton
         funcionalidad = false;
     } 
     
 
     else {
         if (contador >= 2) {
-            let input = document.querySelectorAll('input')[1]
-            let label = document.querySelectorAll('label')[1]
+            let input = document.querySelectorAll('input')[1];
+            let label = document.querySelectorAll('label')[1];
             // agrego nombre al array
-            arrayN.push(input.value)
+            arrayN.push(input.value);
             contador--;
             
             input.placeholder = `Ingresá ${contador} nombre(s) más`;
@@ -48,10 +52,71 @@ form1.addEventListener('submit', (e) => {
             input.value = '';
         } else {
             document.querySelector('#btn1').disabled = true;
-            arrayN.push(document.querySelectorAll('input')[1].value)
-            document.querySelector('h3').innerText = 'Los nombres ingresados fueron:'
-            document.querySelector('p').innerText = `${arrayN.join(', ')}.`;
+            arrayN.push(document.querySelectorAll('input')[1].value);
+            document.querySelector('#form1__h3').innerText = 'Los nombres ingresados fueron:';
+            document.querySelector('#form1__p').innerText = `${arrayN.join(', ')}.`;
         }
+    }
+
+})
+
+/* ------------------------------------------------------------ /
+/                       SEGUNDO FORMULARIO                     /
+/------------------------------------------------------------*/
+
+
+const eleccion = document.querySelectorAll('input[type="radio"]')
+
+
+function parImpar (opcion) {
+    let arrayNum = [];
+    let resto;
+    opcion === 'par'? resto = 0 : resto = 1; 
+    for (let i = 0; i < 100; i++) {
+        if (i % 2 === resto && i % 5 === 0) {
+            arrayNum.push(i);
+        }
+    }
+    document.querySelector('#form2__h3').innerText = `Los números ${opcion}es y múltiplos de 5 entre 1 y 100:`;
+    document.querySelector('#form2__p').innerText = `${arrayNum.join(', ')}.`;
+}
+
+eleccion.forEach((elem) => {
+    elem.addEventListener('change', (e) => {
+        let o = e.target.value;
+        parImpar(o);
+    })
+})
+
+/* ------------------------------------------------------------ /
+/                        TERCER FORMULARIO                     /
+/------------------------------------------------------------*/
+
+const form3 = document.querySelector('form[name="form3"]');
+
+const operando1 = document.querySelector('#operando1')
+const operando2 = document.querySelector('#operando2')
+const operacion = document.querySelector('#operacion')
+
+form3.addEventListener('submit', (e) => {
+    let resultado = document.querySelector('#form3__p')
+    e.preventDefault();
+    console.log(e.target)
+    console.log(operando1.value)
+    console.log(operacion.value)
+
+    switch (operacion.value) {
+        case 'suma':
+            resultado.innerText = `El resultado de la operación ${operacion.value} entre los números ${operando1.value} y ${operando2.value} es igual a ${(operando1.value) + (operando2.value)}`;
+            break;
+
+        case 'resta':
+            resultado.innerText = `El resultado de la operación ${operacion.value} entre los números ${operando1.value} y ${operando2.value} es igual a ${operando1.value - operando2.value}`;
+            break;
+
+        case 'mult':
+            resultado.innerText = `El resultado de la operación ${operacion.value}iplicación entre los números ${operando1.value} y ${operando2.value} es igual a ${operando1.value * operando2.value}`;
+            break;
     }
 
 })

@@ -15,10 +15,7 @@ body {
     background: linear-gradient(-45deg, #a9ecae, #beec94,#84b976);
     background-size: 800% 800%;
     animation: gradient 16s ease infinite;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    gap: 7em;
+    margin-bottom: 3rem;
 }
 
 main {
@@ -28,6 +25,7 @@ main {
     gap: 2rem;
     justify-content: center;
     align-items: center;
+    margin-top: 3rem;
 }
 
 /*--------------------------------------------------/
@@ -65,7 +63,7 @@ main {
 }
 
 .form__title {
-    font-family: serif;
+    font-family: 'Bodoni MT', 'Bodoni 72', serif;
     margin-bottom: 1.2em;
 }
 
@@ -119,8 +117,8 @@ main {
 
 .btn {
     background-color: rgba(238, 116, 156, 0.9);
-    font-family: serif;
-    font-size: 1.2rem;
+    font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif;
+    font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
     padding: .8em 2.1em;
@@ -146,17 +144,29 @@ main {
 
 h3 {
     font-size: 1.4rem;
-    text-decoration: underline wavy;
+    text-decoration: underline;
 
 }
 
 p {
-    text-transform: uppercase;
+    font-family: monospace;
     font-size: 1.1rem;
     font-weight: 500;
 }
 
-
 input[type="radio"] {
-    background-color: rgba(238, 116, 156, 0.9);
-    box-shadow: 0 0.2em 2em 0 rgba( 31, 38, 135, .1 );
+    margin: .4rem;
+    text-align: start;
+}
+
+#form2__1 {
+    font-family: monospace;
+    margin-left: 3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+#form3__p {
+    text-align: center;
+}
