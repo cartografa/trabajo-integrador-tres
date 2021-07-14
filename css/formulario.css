@@ -1,29 +1,4 @@
 /*--------------------------------------------------/
-/                    FUENTES                       /
-/-------------------------------------------------*/
-
-@font-face {
-    font-family: 'Canela Bold';
-    src: url('../fuentes/CanelaDeck-Bold-Web.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Canela Black Italic';
-    src: url('../fuentes/Canela-BlackItalic-Web.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Kobe Black';
-    src: url('../fuentes/MonaLisa.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*--------------------------------------------------/
 /                  ESTILO GENERAL                   /
 /-------------------------------------------------*/
 
@@ -49,6 +24,8 @@ body {
 main {
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
 }
@@ -61,11 +38,6 @@ main {
     width: 80%;
     max-width: 1450px;
     margin: 0 auto;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
 }
 
 .centrado {
@@ -93,12 +65,12 @@ main {
 }
 
 .form__title {
-    font-family: 'Canela Bold', serif;
-    margin-bottom: 1.3em;
+    font-family: serif;
+    margin-bottom: 1.2em;
 }
 
 .form__input {
-    font-family: 'Kobe Black', monospace;
+    font-family: monospace;
     font-size: 1.1rem;
     font-weight: 700;
     padding: 1rem 2rem;
@@ -131,7 +103,7 @@ main {
 }
 
 .form__label {
-    font-family: 'Kobe Black';
+    font-family: monospace;
     font-size: .9rem;
     font-weight: 700;
     margin-left: 4rem; 
@@ -147,8 +119,9 @@ main {
 
 .btn {
     background-color: rgba(238, 116, 156, 0.9);
-    font-family: 'Kobe Black';
+    font-family: serif;
     font-size: 1.2rem;
+    font-weight: 600;
     text-transform: uppercase;
     padding: .8em 2.1em;
     border: none;
@@ -166,3 +139,24 @@ main {
     transform: translateY(-1px);
     box-shadow: 0 .1em .5em rgba(0, 0, 0, .2);
 }
+
+/*--------------------------------------------------/
+/                    TIPOGRAFÍA                    /
+/-------------------------------------------------*/
+
+h3 {
+    font-size: 1.4rem;
+    text-decoration: underline wavy;
+
+}
+
+p {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+input[type="radio"] {
+    background-color: rgba(238, 116, 156, 0.9);
+    box-shadow: 0 0.2em 2em 0 rgba( 31, 38, 135, .1 );

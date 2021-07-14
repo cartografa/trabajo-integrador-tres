@@ -17,6 +17,7 @@ form1.addEventListener('submit', (e) => {
         // Creo el nuevo input + label para pedir nombres
         let nombresInput = document.createElement('input')
         nombresInput.type = 'text';
+        nombresInput.required = true;
         nombresInput.className = 'form__input';
         nombresInput.id = 'nombres'
         nombresInput.placeholder = `Ingresá ${numInput.value} nombres`;
@@ -35,7 +36,7 @@ form1.addEventListener('submit', (e) => {
     
 
     else {
-        if (contador >= 1) {
+        if (contador >= 2) {
             let input = document.querySelectorAll('input')[1]
             let label = document.querySelectorAll('label')[1]
             // agrego nombre al array
@@ -46,8 +47,10 @@ form1.addEventListener('submit', (e) => {
             label.innerText = `Ingresá ${contador} nombre(s) más`;
             input.value = '';
         } else {
-            document.querySelector('h4').innerText = 'Los nombres ingresados fueron:'
-            document.querySelector('p').innerText = arrayN;
+            document.querySelector('#btn1').disabled = true;
+            arrayN.push(document.querySelectorAll('input')[1].value)
+            document.querySelector('h3').innerText = 'Los nombres ingresados fueron:'
+            document.querySelector('p').innerText = `${arrayN.join(', ')}.`;
         }
     }
 
