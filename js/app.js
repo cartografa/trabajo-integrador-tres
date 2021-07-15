@@ -76,7 +76,7 @@ function parImpar (opcion) {
     let arrayNum = [];
     let resto;
     opcion === 'par'? resto = 0 : resto = 1; 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 1; i <= 100; i++) {
         if (i % 2 === resto && i % 5 === 0) {
             arrayNum.push(i);
         }
